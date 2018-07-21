@@ -3,13 +3,13 @@
 
 
 
-#define SOChigh (index_t)(90)
-#define SOClow   (index_t)(10)
+#define SOCHIGH (index_t)(90)
+#define SOCLOW   (index_t)(10)
 //#define cellVmin (uint16_t)2200
 //#define cellVmax (uint16_t)4300
-#define cellVmin (uint16_t)2500
-#define cellVmax (uint16_t)4020
-#define stepSOC  (index_t)20
+#define CELLVMIN (uint16_t)2500
+#define CELLVMAX (uint16_t)4020
+#define STEPSOC  (index_t)20
 
 
 

@@ -8,12 +8,12 @@
 
 
 
-#define colsSocTable	5
-#define colsRangeTable  4
-#define rowsSocTable   21
+#define COLSSOCTBL	5
+#define COLSRANGETBL  4
+#define ROWSSOCTBL   21
 #define colsSocTableOld 3
 
-const uint16_t TableSOC[rowsSocTable][colsSocTable] =
+const uint16_t TableSOC[ROWSSOCTBL][COLSSOCTBL] =
 
 //soc  -40   -18   25   55
 {
@@ -40,7 +40,7 @@ const uint16_t TableSOC[rowsSocTable][colsSocTable] =
 { 100, 3933, 3904, 4020,3999 }
 };
 
-const uint16_t TableSOCOld[rowsSocTable][colsSocTable] =
+const uint16_t TableSOCOld[ROWSSOCTBL][COLSSOCTBL] =
 
 {
 	//  %  mV@-40C mV@24C
@@ -65,4 +65,29 @@ const uint16_t TableSOCOld[rowsSocTable][colsSocTable] =
 	{ 90,  4269, 4076,4076,4076, },
 	{ 95,  4335, 4123,4123,4123, },
 	{ 100, 4402, 4185,4185,4185, },
+};
+uint16_t  vtSOC[][2] =
+{
+	//  %  mV@24C mV@-40C
+	{  2857,  0,},
+	{  3346,  5,},
+	{ 3439,  10,},
+	{ 3473,  15,},
+	{  3514,  20, },
+	{  3549,  25,},
+	{  3580, 30, },
+	{ 3610,   35, },
+	{ 3636,  40, },
+	{  3663, 45, },
+	{ 3700,  50, },
+	{  3747,55, },
+	{  3797,60, },
+	{  3846, 65, },
+	{  3902, 70, },
+	{ 3951,  75, },
+	{  3994, 80, },
+	{  4037, 85, },
+	{  4076, 90, },
+	{ 4123, 95, },
+	{ 4185,100, },
 };
