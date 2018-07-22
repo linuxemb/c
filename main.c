@@ -13,7 +13,7 @@
 	 // Create test cases for temperature between Min to Max at range of Cell voltage
      // between VcellMax and VcellMin 
      temperature_t temperature = Tmin ; 
-      Vcell_t cellV = cellVmin; 
+      Vcell_t cellV = CELLVMIN; 
 	  index_t ret; // 
       
       
@@ -25,8 +25,8 @@
 	  int main(int argc, char **argv)
 
 {
-		//  index_t retsoc = getSOC( 3800,25, 0);
-		 // printf(" %d \n", retsoc);
+		  index_t retsoc = getSOC( 3800,25, 0);
+		  printf(" %d \n", retsoc);
 		  
 		  FILE *fp;
 		  fp = fopen("soc.csv", "w+c");
@@ -37,14 +37,14 @@
 			  return 1;
 		  }
 
-		  	/*	     
-   fprintf(fp, "retsoc=====%d,\n", retsoc);  // for place holder
-   fclose(fp); // or for the paranoid: if (fclose (fout) == eof) rc = 0;
-   int data;
-   scanf("%d", &data);
-      
-   return ret;
- }*/
+		  		     
+ //  fprintf(fp, "retsoc=====%d,\n", retsoc);  // for place holder
+ //  fclose(fp); // or for the paranoid: if (fclose (fout) == eof) rc = 0;
+ //  int data;
+ //  scanf("%d", &data);
+ //     
+ //  return ret;
+ //}
 
      
    
@@ -53,8 +53,8 @@
        
       for( index_t idx =  0;  idx < 200 ; idx ++)
          {
-             uint16_t rowOne = idx * stepV + cellVmin;
-               if  (( rowOne  >= (uint16_t)cellVmin)  && (rowOne  <= (uint16_t)cellVmax))
+             uint16_t rowOne = idx * STEPV + CELLVMIN;
+               if  (( rowOne  >= (uint16_t)CELLVMIN)  && (rowOne  <= (uint16_t)CELLVMAX))
                {                  
 				   countV++;
                     fprintf(fp, "%d,", rowOne);
@@ -70,26 +70,26 @@
           //  fprintf(fp," @Temperature of %d \n", temperature); 
             fprintf(fp,"\n %d, ", temperature);
             
-            cellV = cellVmin;  // reset cellVmin for next iteration
+            cellV = CELLVMIN;  // reset cellVmin for next iteration
             
               if ((temperature < (Tmin)) || (temperature >  (Tmax) ))  // done  
            {
         printf ( "out of temperature range \n");
          return 0;
          }
-			  temperature = j == 0 ? temperature :  temperature + stepT;
+			  temperature = j == 0 ? temperature :  temperature + STEPT;
                 // do once at least for start temperature point
                                             
                    for (index_t i = 0 ; i < rowV; i ++)
                {
-                if  ((cellV < cellVmin)  || (cellV > cellVmax))
+                if  ((cellV < CELLVMIN)  || (cellV > CELLVMAX))
                        {
                       break;
                     }  
                     ret = getSOC(cellV,temperature, soc);              
                  
                   fprintf(fp,"%03d, ", ret);                 
-                  cellV = cellV + stepV ;
+                  cellV = cellV + STEPV ;
                 }                                                            
             }   
                           
