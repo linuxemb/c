@@ -1,119 +1,59 @@
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
-
-#include <assert.h>
-#include <limits.h>
-#include <math.h>
-typedef struct Shelf {
-	int pages;
-	struct Shelf *next;
-}Shelf;
-
-Shelf* addBook(Shelf *head, int pages)
-{
-	Shelf *to_add = malloc(sizeof(Shelf));
-	to_add->pages = pages;
-	to_add->next = NULL;
-	if (head == NULL) {
-		return to_add;
-	}
-	else if (head->next == NULL) {
-		head->next = to_add;
-		return head;
-	}
-	else {
-		Shelf *current = head;
-		while (current->next != NULL) {
-			current = current->next;
-		}
-		current->next = to_add;
-		return head;
-	}
-}
-
-int getPages(Shelf *head, int book_number)
-{
-	Shelf *current = head;
-	for (int i = 0; i != book_number; i++) {
-		current = current->next;
-	}
-	return current->pages;
-}
-
-int getNumberofBooks(Shelf *head)
-{
-	int counter = 0;
-	if (head == NULL) {
-		return counter;
-	}
-
-	counter = 1;
-
-	Shelf *current = head;
-	while (current->next != NULL) {
-		counter++;
-		current = current->next;
-	}
-	return counter;
-}
-
-Shelf *freeShelf(Shelf *head)
-{
-	Shelf *current = head;
-	Shelf *next;
-	while (current->next != NULL) {
-		next = current->next;
-		free(current);
-		current = next;
-	}
-	return NULL;
-}
-
 int main()
 {
-	int number_of_shelves;
-	int number_of_queries;
-	scanf("%d", &number_of_shelves);
-	scanf("%d", &number_of_queries);
+	int i;
+	int total_number_of_shelves;
+	scanf("%d", &total_number_of_shelves);
 
-	Shelf **shelves = malloc(number_of_shelves * sizeof(Shelf*)); // create an array of Shelf
-	if (shelves == NULL) { printf("Memory allocation error 1\n"); goto end; }
+	int total_number_of_queries;
+	scanf("%d", &total_number_of_queries);
+	total_number_of_books = (int *)calloc(total_number_of_shelves, sizeof(int));
+	total_number_of_pages = (int **)calloc(total_number_of_shelves, sizeof(int *));
+	for (i = 0; i<total_number_of_shelves; i++) {
+		total_number_of_pages[i] = (int *)calloc(1100, sizeof(int));
+	}
+	while (total_number_of_queries--) {
+		int type_of_query;
+		scanf("%d", &type_of_query);
 
-
-   /*****************************/
-
-	int input_type;
-
-	while (number_of_queries--) {
-		scanf("%d", &input_type);
-		if (input_type == 1) {
+		if (type_of_query == 1) {
+			/*
+			* Process the query of first type here.
+			*/
 			int x, y;
-			scanf("%d", &x);
-			scanf("%d", &y);
-			shelves[x] = addBook(shelves[x], y);
+			scanf("%d %d", &x, &y);
+			for (i = 0; i<1100; i++) {
+				if ((*(total_number_of_pages + x))[i] == 0) {
+					(*(total_number_of_pages + x))[i] = y;
+					total_number_of_books[x] += 1;
+					break;
+				}
+			}
 		}
-		else if (input_type == 2) {
+		else if (type_of_query == 2) {
 			int x, y;
-			scanf("%d", &x);
-			scanf("%d", &y);
-			printf("%d\n", getPages(shelves[x], y));
+			scanf("%d %d", &x, &y);
+			printf("%d\n", *(*(total_number_of_pages + x) + y));
 		}
-		else if (input_type == 3) {
+		else {
 			int x;
 			scanf("%d", &x);
-			printf("%d\n", getNumberofBooks(shelves[x]));
+			printf("%d\n", *(total_number_of_books + x));
 		}
 	}
 
-	goto end;
+	if (total_number_of_books) {
+		free(total_number_of_books);
+	}
 
-end:
-	/**** free calls ****/
-	//system("pause");
+	for (int i = 0; i < total_number_of_shelves; i++) {
+		if (*(total_number_of_pages + i)) {
+			free(*(total_number_of_pages + i));
+		}
+	}
 
-	exit(0); // should kill program before executing anything else
+	if (total_number_of_pages) {
+		free(total_number_of_pages);
+	}
+	system("Pause");
+	return 0;
 }
-
