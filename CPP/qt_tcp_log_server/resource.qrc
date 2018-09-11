@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/MyFile">
+        <file>receive.txt</file>
+        <file>control.h</file>
+    </qresource>
+</RCC>

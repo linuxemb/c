@@ -1,0 +1,73 @@
+#include "dialog.h"
+#include "ui_dialog.h"
+
+Dialog::Dialog(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::Dialog)
+{
+    ui->setupUi(this);
+
+    scene = new QGraphicsScene;
+    ui ->graphicsView ->setScene(scene);
+
+    //========================
+    QBrush redBrush(Qt::red);
+    QBrush blueBrush(Qt::blue);
+    QPen blackpen(Qt::black);
+    blackpen.setWidth(6);
+
+    ellipse = scene ->addEllipse(10,10,100,100,blackpen,redBrush);
+    //=======================
+//add x y axie========================
+
+    //for x axis
+    QPoint p3;
+    p3.setX(10);
+    p3.setY(250);
+
+
+    QPoint p4;
+    p4.setX(400);
+    p4.setY(250);
+
+     QPainter painter;
+     QPen linepen(Qt::red);
+     linepen.setWidth(4);
+
+    painter.setPen(linepen);
+
+     painter.drawLine(p3,p4);
+     painter.setPen(linepen);
+     painter.drawPoint(p4);
+
+
+    //===============================
+
+
+
+
+
+     mysquare = new mySq();
+    scene ->addItem(mysquare);
+    mysquare ->setPos(30,30);
+    mysquare ->setZValue(5);
+    mysquare ->setVisible(true);
+    mysquare ->update();
+
+  int c = 0;
+   int i = 10;
+  for (c; c < 10;c++);
+  {
+      i= i + 20;
+    mysquare_arr[c] = new mySq();
+    scene ->addItem(mysquare_arr[c]);
+
+     mysquare_arr[c] ->setVisible(true);
+     mysquare_arr[c] ->update();
+    }
+}
+
+Dialog::~Dialog()
+{
+    delete ui;
+}
