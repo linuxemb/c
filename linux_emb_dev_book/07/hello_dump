@@ -1,0 +1,92 @@
+
+hello:     file format elf64-x86-64
+
+SYMBOL TABLE:
+00000000004001c8 l    d  .interp	0000000000000000              .interp
+00000000004001e4 l    d  .note.ABI-tag	0000000000000000              .note.ABI-tag
+0000000000400204 l    d  .note.gnu.build-id	0000000000000000              .note.gnu.build-id
+0000000000400228 l    d  .gnu.hash	0000000000000000              .gnu.hash
+0000000000400248 l    d  .dynsym	0000000000000000              .dynsym
+00000000004002d8 l    d  .dynstr	0000000000000000              .dynstr
+0000000000400324 l    d  .gnu.version	0000000000000000              .gnu.version
+0000000000400330 l    d  .gnu.version_r	0000000000000000              .gnu.version_r
+0000000000400350 l    d  .rela.dyn	0000000000000000              .rela.dyn
+0000000000400368 l    d  .rela.plt	0000000000000000              .rela.plt
+00000000004003c8 l    d  .init	0000000000000000              .init
+00000000004003f0 l    d  .plt	0000000000000000              .plt
+0000000000400440 l    d  .plt.got	0000000000000000              .plt.got
+0000000000400448 l    d  .rt_text	0000000000000000              .rt_text
+00000000004004f0 l    d  .text	0000000000000000              .text
+00000000004006f4 l    d  .fini	0000000000000000              .fini
+0000000000400700 l    d  .rodata	0000000000000000              .rodata
+0000000000400710 l    d  .eh_frame_hdr	0000000000000000              .eh_frame_hdr
+0000000000400758 l    d  .eh_frame	0000000000000000              .eh_frame
+0000000000600e10 l    d  .init_array	0000000000000000              .init_array
+0000000000600e18 l    d  .fini_array	0000000000000000              .fini_array
+0000000000600e20 l    d  .jcr	0000000000000000              .jcr
+0000000000600e28 l    d  .dynamic	0000000000000000              .dynamic
+0000000000600ff8 l    d  .got	0000000000000000              .got
+0000000000601000 l    d  .got.plt	0000000000000000              .got.plt
+0000000000601040 l    d  .rt_data	0000000000000000              .rt_data
+0000000000601088 l    d  .data	0000000000000000              .data
+00000000006010a0 l    d  .rt_bss	0000000000000000              .rt_bss
+0000000000601144 l    d  .bss	0000000000000000              .bss
+0000000000000000 l    d  .comment	0000000000000000              .comment
+0000000000000000 l    df *ABS*	0000000000000000              hello_rt_world.c
+0000000000000000 l    df *ABS*	0000000000000000              crtstuff.c
+0000000000600e20 l     O .jcr	0000000000000000              __JCR_LIST__
+0000000000400520 l     F .text	0000000000000000              deregister_tm_clones
+0000000000400560 l     F .text	0000000000000000              register_tm_clones
+00000000004005a0 l     F .text	0000000000000000              __do_global_dtors_aux
+0000000000601144 l     O .bss	0000000000000001              completed.7594
+0000000000600e18 l     O .fini_array	0000000000000000              __do_global_dtors_aux_fini_array_entry
+00000000004005c0 l     F .text	0000000000000000              frame_dummy
+0000000000600e10 l     O .init_array	0000000000000000              __frame_dummy_init_array_entry
+0000000000000000 l    df *ABS*	0000000000000000              hello_world.c
+0000000000000000 l    df *ABS*	0000000000000000              hello_rt_data.c
+0000000000000000 l    df *ABS*	0000000000000000              hello_rt_bss.c
+0000000000000000 l    df *ABS*	0000000000000000              hello_main.c
+0000000000000000 l    df *ABS*	0000000000000000              crtstuff.c
+0000000000400888 l     O .eh_frame	0000000000000000              __FRAME_END__
+0000000000600e20 l     O .jcr	0000000000000000              __JCR_END__
+0000000000000000 l    df *ABS*	0000000000000000              
+0000000000600e18 l       .init_array	0000000000000000              __init_array_end
+0000000000600e28 l     O .dynamic	0000000000000000              _DYNAMIC
+0000000000600e10 l       .init_array	0000000000000000              __init_array_start
+0000000000400710 l       .eh_frame_hdr	0000000000000000              __GNU_EH_FRAME_HDR
+0000000000601000 l     O .got.plt	0000000000000000              _GLOBAL_OFFSET_TABLE_
+00000000004006f0 g     F .text	0000000000000002              __libc_csu_fini
+0000000000601040 g       .rt_data	0000000000000000              __start_rt_data
+00000000006010e0 g     O .rt_bss	0000000000000064              rt_bss
+0000000000000000       F *UND*	0000000000000000              mlock@@GLIBC_2.2.5
+0000000000000000  w      *UND*	0000000000000000              _ITM_deregisterTMCloneTable
+0000000000601088  w      .data	0000000000000000              data_start
+0000000000601040 g     O .rt_data	0000000000000011              rt_data
+00000000004005e6 g     F .text	0000000000000016              hello_world
+0000000000601098 g       .data	0000000000000000              _edata
+00000000004006f4 g     F .fini	0000000000000000              _fini
+0000000000400448 g       .rt_text	0000000000000000              __start_rt_text
+0000000000000000       F *UND*	0000000000000000              printf@@GLIBC_2.2.5
+0000000000601086 g       .rt_data	0000000000000000              __end_rt_data
+0000000000000000       F *UND*	0000000000000000              memset@@GLIBC_2.2.5
+0000000000000000       F *UND*	0000000000000000              __libc_start_main@@GLIBC_2.2.5
+0000000000601088 g       .data	0000000000000000              __data_start
+0000000000000000  w      *UND*	0000000000000000              __gmon_start__
+0000000000601090 g     O .data	0000000000000000              .hidden __dso_handle
+0000000000400700 g     O .rodata	0000000000000004              _IO_stdin_used
+0000000000400680 g     F .text	0000000000000065              __libc_csu_init
+0000000000601148 g       .bss	0000000000000000              _end
+00000000004004f0 g     F .text	000000000000002a              _start
+0000000000400448 g     F .rt_text	000000000000002f              hello_rt_world
+0000000000601098 g       .rt_bss	0000000000000000              __bss_start
+0000000000400666 g     F .text	000000000000001a              main
+0000000000601144 g       .rt_bss	0000000000000000              __end_rt_bss
+00000000004005fc g     F .text	000000000000006a              rt_lockall
+0000000000000000  w      *UND*	0000000000000000              _Jv_RegisterClasses
+0000000000601098 g     O .data	0000000000000000              .hidden __TMC_END__
+0000000000000000  w      *UND*	0000000000000000              _ITM_registerTMCloneTable
+00000000004003c8 g     F .init	0000000000000000              _init
+00000000006010a0 g       .rt_bss	0000000000000000              __start_rt_bss
+00000000004004e8 g       .rt_text	0000000000000000              __end_rt_text
+
+
