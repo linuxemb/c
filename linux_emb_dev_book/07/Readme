@@ -1,0 +1,5 @@
+ld -verbers > default 
+
+cp default rt_swcripot
+
+gcc -o hello hello_main.o hello_rt_bss.o ......-T rt_script
