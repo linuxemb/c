@@ -1,5 +1,27 @@
+
+Effective locking using linker script
+
+============================
+1) generate teh object code but  dont not link
+gcc -c hello_workld.c hello_rt"_world.c hello_rt_data.c ...
+2) get the default linker script and make  a copy
+
 ld -verbers > default 
 
 cp default rt_swcripot
+3) Edit rc_Script and remove linker details (Remove everthing before the OUTPUT_FORMAT  command and also ===== .. at endo f the file
 
+5) locat .text, .dtan and .bss section ain rt_scripot and add entries rt_text , rt_Datt, and .bss section in rt_script and add entires in ...
+see " default1"
+-----
+6) linkthe applicaon 
 gcc -o hello hello_main.o hello_rt_bss.o ......-T rt_script
+
+
+7) verify all real-time functin and data are in proper sections by objdump cmd
+
+objdump -t hello
+
+
+
+
