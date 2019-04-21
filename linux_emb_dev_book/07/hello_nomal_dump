@@ -1,4 +1,10 @@
 
+/// objdump -t hello_normal
+
+without generate rt_data rt_bss, rt_text sections
+
+****************************************************************
+
 hello_nomal:     file format elf64-x86-64
 
 SYMBOL TABLE:

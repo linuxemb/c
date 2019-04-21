@@ -1,4 +1,7 @@
-
+====
+dump from split rt funcitons to differnt files , modify linker scripts
+has rt_Bss, rt_data _text etc
+**************************************************************
 hello:     file format elf64-x86-64
 
 SYMBOL TABLE:
